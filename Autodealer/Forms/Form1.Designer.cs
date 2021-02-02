@@ -685,7 +685,7 @@ namespace Autodealer
             this.clientMobileNumberTB.Name = "clientMobileNumberTB";
             this.clientMobileNumberTB.Size = new System.Drawing.Size(122, 20);
             this.clientMobileNumberTB.TabIndex = 4;
-            this.clientMobileNumberTB.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
+            this.clientMobileNumberTB.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
             // 
             // label10
             // 

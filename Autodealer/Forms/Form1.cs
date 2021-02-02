@@ -298,7 +298,7 @@ namespace Autodealer
             ClientsAuth cl = new ClientsAuth();
             if (string.IsNullOrWhiteSpace(clientNameTB.Text) || string.IsNullOrWhiteSpace(clientSurnameTB.Text) || string.IsNullOrWhiteSpace(clientMiddlenameTB.Text) ||
                     string.IsNullOrWhiteSpace(clientEmailTB.Text) || string.IsNullOrWhiteSpace(clientLoginTB.Text) ||
-                        string.IsNullOrWhiteSpace(clientPasswordTB.Text) || (clientMobileNumberTB.MaskCompleted == false || clientMobileNumberTB.Text.Length != 10))
+                        string.IsNullOrWhiteSpace(clientPasswordTB.Text) )
             {
                 MessageBox.Show("Поля не могут быть пустыми");
             }
@@ -437,7 +437,6 @@ namespace Autodealer
                 hideTB.Visible = true;
             }
             isClicked = !isClicked;
-            
         }
         public void addClientToArchive()
         {
@@ -447,7 +446,7 @@ namespace Autodealer
                 ClientsAuth cl = new ClientsAuth();
                 if (string.IsNullOrWhiteSpace(clientNameTB.Text) || string.IsNullOrWhiteSpace(clientSurnameTB.Text) || string.IsNullOrWhiteSpace(clientMiddlenameTB.Text) ||
                     string.IsNullOrWhiteSpace(clientEmailTB.Text) || string.IsNullOrWhiteSpace(clientLoginTB.Text) ||
-                        string.IsNullOrWhiteSpace(clientPasswordTB.Text) || (clientMobileNumberTB.MaskCompleted == false || clientMobileNumberTB.Text.Length != 10))
+                        string.IsNullOrWhiteSpace(clientPasswordTB.Text))
                 {
                     MessageBox.Show("Поля не могут быть пустыми");
                 }
@@ -668,29 +667,36 @@ namespace Autodealer
         {
             if (ordersDG.SelectedRows.Count != 0)
             {
-                var getStaff = SQLiteDataAccess.findStaff(workerNameCB.Text, workerSurnameCB.Text);
-                if(getStaff != null)
+                try
                 {
-                    staffId = getStaff.id;
-                    Orders s = new Orders();
-                    DataGridViewRow row = ordersDG.SelectedRows[0];
-                    if (workerNameCB.Text != "" && workerSurnameCB.Text != "")
+                    var getStaff = SQLiteDataAccess.findStaff(workerNameCB.Text, workerSurnameCB.Text);
+                    if (getStaff != null)
                     {
+                        staffId = getStaff.id;
+                        Orders s = new Orders();
+                        DataGridViewRow row = ordersDG.SelectedRows[0];
+                        if (workerNameCB.Text != "" && workerSurnameCB.Text != "")
+                        {
 
-                        s.id = Int32.Parse(row.Cells[0].Value.ToString());
-                        s.worker_id = staffId;
+                            s.id = Int32.Parse(row.Cells[0].Value.ToString());
+                            s.worker_id = staffId;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Выберите сотрудника");
+                        }
+                        SQLiteDataAccess.addStaffToOrder(s);
+                        loadAODList();
                     }
                     else
                     {
-                        MessageBox.Show("Выберите сотрудника");
+                        MessageBox.Show("Указанный сотрудник не найден");
                     }
-                    SQLiteDataAccess.addStaffToOrder(s);
-                    loadAODList();
                 }
-                else
+                catch
                 {
                     MessageBox.Show("Указанный сотрудник не найден");
-                }
+                }                
             }
         }
 

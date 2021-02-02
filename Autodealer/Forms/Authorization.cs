@@ -44,44 +44,50 @@ namespace Autodealer
 
         private void loginBtn_Click(object sender, EventArgs e)
         {
-            var result = SQLiteDataAccess.loadUser(authLoginTB.Text, authPasswordTB.Text);
-            if (result.Count() != 0)
+            try
             {
-                string userRole = result[0].role;
-                if (userRole == "Administrator")
+                var result = SQLiteDataAccess.loadUser(authLoginTB.Text, authPasswordTB.Text);
+                if (result.Count() != 0)
                 {
-                    Form1 form = new Form1();
-                    this.Hide();
-                    form.Show();
-                }
-                else
-                {
-                    if (userRole == "Manager")
+                    string userRole = result[0].role;
+                    if (userRole == "Administrator")
                     {
                         Form1 form = new Form1();
                         this.Hide();
                         form.Show();
-                        form.StaffBtn = false;
                     }
+                    else
+                    {
+                        if (userRole == "Manager")
+                        {
+                            Form1 form = new Form1();
+                            this.Hide();
+                            form.Show();
+                            form.StaffBtn = false;
+                        }
 
-                }
-            }
-            else
-            {
-                var clientResult = SQLiteDataAccess.loadClient(authLoginTB.Text, authPasswordTB.Text);
-                if (clientResult.Count() != 0)
-                {
-                    Clients clients = new Clients();
-                    this.Hide();
-                    clients.Show();
-                    clients.authorizeClient(authLoginTB.Text, authPasswordTB.Text);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Данные введены неверно или пользователь удалён");
+                    var clientResult = SQLiteDataAccess.loadClient(authLoginTB.Text, authPasswordTB.Text);
+                    if (clientResult.Count() != 0)
+                    {
+                        Clients clients = new Clients();
+                        this.Hide();
+                        clients.Show();
+                        clients.authorizeClient(authLoginTB.Text, authPasswordTB.Text);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Данные введены неверно или пользователь удалён");
+                    }
                 }
             }
-            
+            catch
+            {
+                MessageBox.Show("Данные введены неверно или пользователь удалён");
+            }
         }
         /*ДВИГАТЬ ОКОШКО */
         private void Authorization_MouseDown(object sender, MouseEventArgs e)

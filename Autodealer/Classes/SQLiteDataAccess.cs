@@ -85,7 +85,7 @@ namespace Autodealer
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
 
-                var output = cnn.Query<UserAuth>("SELECT login, password, role FROM Workers where login = '"+login+"' and password = '"+password+"'");
+                var output = cnn.Query<UserAuth>("SELECT login, password, role FROM Workers where login = '"+login+"' and password = '"+password+"' and Archived <>1");
                 
                 return output.ToList();
                 

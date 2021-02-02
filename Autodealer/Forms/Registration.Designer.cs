@@ -276,7 +276,7 @@ namespace Autodealer
             this.clientMobileNumberTB.Name = "clientMobileNumberTB";
             this.clientMobileNumberTB.Size = new System.Drawing.Size(174, 23);
             this.clientMobileNumberTB.TabIndex = 32;
-            this.clientMobileNumberTB.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
+            this.clientMobileNumberTB.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
             // 
             // Registration
             // 

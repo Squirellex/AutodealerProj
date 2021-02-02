@@ -73,7 +73,7 @@ namespace Autodealer
             ClientsAuth cl = new ClientsAuth();
             if (string.IsNullOrWhiteSpace(clientNameTB.Text) || string.IsNullOrWhiteSpace(clientSurnameTB.Text) || string.IsNullOrWhiteSpace(clientMiddlenameTB.Text) ||
                     string.IsNullOrWhiteSpace(clientEmailTB.Text) || string.IsNullOrWhiteSpace(clientLoginTB.Text) ||
-                        string.IsNullOrWhiteSpace(clientPasswordTB.Text) || (clientMobileNumberTB.MaskCompleted == false || clientMobileNumberTB.Text.Length != 10))
+                        string.IsNullOrWhiteSpace(clientPasswordTB.Text))
             {
                 MessageBox.Show("Поля не могут быть пустыми");
             }

@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Autodealer.exe" size="353248">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Autodealer.exe" size="353760">
       <assemblyIdentity name="Autodealer" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>deAjTflykCMd8KCdl6fpKwpEI9jJPkFtAv+wQ6UgjCo=</dsig:DigestValue>
+        <dsig:DigestValue>bOqWiEAiLs4+qC2Os4P1sopMPipc8kBQzgn8fsz1bAg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
