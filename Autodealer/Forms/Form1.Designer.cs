@@ -496,7 +496,7 @@ namespace Autodealer
             this.editBtn.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.editBtn.FlatAppearance.BorderSize = 0;
             this.editBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.editBtn.Font = new System.Drawing.Font("Lucida Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editBtn.Font = new System.Drawing.Font("Lucida Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editBtn.ForeColor = System.Drawing.Color.White;
             this.editBtn.IconChar = FontAwesome.Sharp.IconChar.Edit;
             this.editBtn.IconColor = System.Drawing.Color.White;
@@ -685,6 +685,7 @@ namespace Autodealer
             this.clientMobileNumberTB.Name = "clientMobileNumberTB";
             this.clientMobileNumberTB.Size = new System.Drawing.Size(122, 20);
             this.clientMobileNumberTB.TabIndex = 4;
+            this.clientMobileNumberTB.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
             // 
             // label10
             // 
@@ -1215,11 +1216,13 @@ namespace Autodealer
             // staffMobileNumberTB
             // 
             this.staffMobileNumberTB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.staffMobileNumberTB.Font = new System.Drawing.Font("Lucida Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.staffMobileNumberTB.Location = new System.Drawing.Point(453, 20);
             this.staffMobileNumberTB.Mask = "+7 (999) 000-0000";
             this.staffMobileNumberTB.Name = "staffMobileNumberTB";
             this.staffMobileNumberTB.Size = new System.Drawing.Size(122, 20);
             this.staffMobileNumberTB.TabIndex = 4;
+            this.staffMobileNumberTB.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
             // 
             // label16
             // 
@@ -1234,6 +1237,7 @@ namespace Autodealer
             // staffNameTB
             // 
             this.staffNameTB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.staffNameTB.Font = new System.Drawing.Font("Lucida Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.staffNameTB.Location = new System.Drawing.Point(0, 20);
             this.staffNameTB.Name = "staffNameTB";
             this.staffNameTB.Size = new System.Drawing.Size(122, 20);
@@ -1243,18 +1247,20 @@ namespace Autodealer
             // 
             this.staffRoleCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.staffRoleCB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.staffRoleCB.Font = new System.Drawing.Font("Lucida Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.staffRoleCB.FormattingEnabled = true;
             this.staffRoleCB.Items.AddRange(new object[] {
             "Administrator",
             "Manager"});
             this.staffRoleCB.Location = new System.Drawing.Point(298, 62);
             this.staffRoleCB.Name = "staffRoleCB";
-            this.staffRoleCB.Size = new System.Drawing.Size(121, 21);
+            this.staffRoleCB.Size = new System.Drawing.Size(121, 22);
             this.staffRoleCB.TabIndex = 8;
             // 
             // staffSurnameTB
             // 
             this.staffSurnameTB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.staffSurnameTB.Font = new System.Drawing.Font("Lucida Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.staffSurnameTB.Location = new System.Drawing.Point(150, 20);
             this.staffSurnameTB.Name = "staffSurnameTB";
             this.staffSurnameTB.Size = new System.Drawing.Size(122, 20);
@@ -1283,6 +1289,7 @@ namespace Autodealer
             // staffPasswordTB
             // 
             this.staffPasswordTB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.staffPasswordTB.Font = new System.Drawing.Font("Lucida Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.staffPasswordTB.Location = new System.Drawing.Point(150, 63);
             this.staffPasswordTB.Name = "staffPasswordTB";
             this.staffPasswordTB.Size = new System.Drawing.Size(122, 20);
@@ -1291,6 +1298,7 @@ namespace Autodealer
             // staffMiddlenameTB
             // 
             this.staffMiddlenameTB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.staffMiddlenameTB.Font = new System.Drawing.Font("Lucida Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.staffMiddlenameTB.Location = new System.Drawing.Point(298, 20);
             this.staffMiddlenameTB.Name = "staffMiddlenameTB";
             this.staffMiddlenameTB.Size = new System.Drawing.Size(122, 20);
@@ -1319,6 +1327,7 @@ namespace Autodealer
             // staffLoginTB
             // 
             this.staffLoginTB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.staffLoginTB.Font = new System.Drawing.Font("Lucida Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.staffLoginTB.Location = new System.Drawing.Point(0, 63);
             this.staffLoginTB.Name = "staffLoginTB";
             this.staffLoginTB.Size = new System.Drawing.Size(122, 20);
@@ -1357,6 +1366,7 @@ namespace Autodealer
             // staffEmailTB
             // 
             this.staffEmailTB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.staffEmailTB.Font = new System.Drawing.Font("Lucida Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.staffEmailTB.Location = new System.Drawing.Point(598, 20);
             this.staffEmailTB.Name = "staffEmailTB";
             this.staffEmailTB.Size = new System.Drawing.Size(122, 20);
@@ -1424,6 +1434,7 @@ namespace Autodealer
             this.staffDG.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.staffDG.Size = new System.Drawing.Size(720, 302);
             this.staffDG.TabIndex = 10;
+            this.staffDG.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.staffDG_CellMouseClick);
             // 
             // addStaffBtn
             // 

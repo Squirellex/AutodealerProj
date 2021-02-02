@@ -45,7 +45,6 @@ namespace Autodealer
         private void loginBtn_Click(object sender, EventArgs e)
         {
             var result = SQLiteDataAccess.loadUser(authLoginTB.Text, authPasswordTB.Text);
-            
             if (result.Count() != 0)
             {
                 string userRole = result[0].role;

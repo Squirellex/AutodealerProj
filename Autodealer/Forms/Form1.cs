@@ -168,8 +168,12 @@ namespace Autodealer
         private void addCarButton_Click(object sender, EventArgs e)
         {
             Cars c = new Cars();
-            if (carMarkTB.Text != "" && carModelTB.Text != "" && carReleaseDateDP.Value.ToString() != "" &&
-                    carColorTB.Text != "" && carPriceTB.Text != "")
+            if (string.IsNullOrWhiteSpace(carMarkTB.Text) || string.IsNullOrWhiteSpace(carModelTB.Text) || string.IsNullOrWhiteSpace(carReleaseDateDP.Text) ||
+                    string.IsNullOrWhiteSpace(carColorTB.Text) || string.IsNullOrWhiteSpace(carPriceTB.Text))
+            {
+                MessageBox.Show("Поля не могут быть пустыми");
+            }
+            else
             {
                 c.carMark = carMarkTB.Text;
                 c.carModel = carModelTB.Text;
@@ -183,11 +187,6 @@ namespace Autodealer
                 carMarkTB.Text = "";
                 carModelTB.Text = "";
                 carColorTB.Text = "";
-                carPriceTB.Text = "";
-            }
-            else
-            {
-                MessageBox.Show("Поля не могут быть пустыми");
             }
         }
 
@@ -238,11 +237,16 @@ namespace Autodealer
         {
             var loginCheck = SQLiteDataAccess.staffLoginCheck(staffLoginTB.Text);
             Staff s = new Staff();
-            if (staffNameTB.Text != "" && staffSurnameTB.Text != "" && staffMiddlenameTB.Text != ""
-                    && staffMiddlenameTB.Text != "" && staffMobileNumberTB.Text != "" && staffEmailTB.Text != ""
-                    && staffLoginTB.Text != "" && staffPasswordTB.Text != "" && staffRoleCB.Text != "")
+            if (string.IsNullOrWhiteSpace(staffNameTB.Text) || string.IsNullOrWhiteSpace(staffSurnameTB.Text) || string.IsNullOrWhiteSpace(staffMiddlenameTB.Text) ||
+                    string.IsNullOrWhiteSpace(staffEmailTB.Text) || string.IsNullOrWhiteSpace(staffLoginTB.Text) ||
+                        string.IsNullOrWhiteSpace(staffPasswordTB.Text) || string.IsNullOrWhiteSpace(staffRoleCB.Text) || (staffMobileNumberTB.MaskCompleted == false && staffMobileNumberTB.Text.Length != 17))
             {
-                if (loginCheck.Count() == 0) {
+                MessageBox.Show("Поля не могут быть пустыми");
+            }
+            else
+            {
+                if (loginCheck.Count() == 0)
+                {
                     s.name = staffNameTB.Text;
                     s.surname = staffSurnameTB.Text;
                     s.middlename = staffMiddlenameTB.Text;
@@ -269,11 +273,6 @@ namespace Autodealer
                 {
                     MessageBox.Show("Пользователь с таким логином уже существует");
                 }
-                
-            }
-            else
-            {
-                MessageBox.Show("Поля не могут быть пустыми");
             }
         }
         private void addStaffInCBs()
@@ -295,32 +294,41 @@ namespace Autodealer
 
         private void addClientBtn_Click(object sender, EventArgs e)
         {
+            var loginCheck = SQLiteDataAccess.clientLoginCheck(clientLoginTB.Text);
             ClientsAuth cl = new ClientsAuth();
-            if (clientNameTB.Text != "" && clientSurnameTB.Text != "" && clientMiddlenameTB.Text != "" &&
-                    clientMobileNumberTB.Text != "" && clientEmailTB.Text != "" && clientLoginTB.Text != "" && clientPasswordTB.Text != "")
+            if (string.IsNullOrWhiteSpace(clientNameTB.Text) || string.IsNullOrWhiteSpace(clientSurnameTB.Text) || string.IsNullOrWhiteSpace(clientMiddlenameTB.Text) ||
+                    string.IsNullOrWhiteSpace(clientEmailTB.Text) || string.IsNullOrWhiteSpace(clientLoginTB.Text) ||
+                        string.IsNullOrWhiteSpace(clientPasswordTB.Text) || (clientMobileNumberTB.MaskCompleted == false || clientMobileNumberTB.Text.Length != 10))
             {
-                cl.clientName = clientNameTB.Text;
-                cl.clientSurname = clientSurnameTB.Text;
-                cl.clientMiddlename = clientMiddlenameTB.Text;
-                cl.clientMobileNumber = clientMobileNumberTB.Text.ToString();
-                cl.clientEmail = clientEmailTB.Text;
-                cl.clientLogin = clientLoginTB.Text;
-                cl.clientPassword = clientPasswordTB.Text;
-
-                SQLiteDataAccess.saveClient(cl);
-                loadClientList();
-
-                clientNameTB.Text = "";
-                clientSurnameTB.Text = "";
-                clientMiddlenameTB.Text = "";
-                clientMobileNumberTB.Text = "";
-                clientEmailTB.Text = "";
-                clientLoginTB.Text = "";
-                clientPasswordTB.Text = "";
+                MessageBox.Show("Поля не могут быть пустыми");
             }
             else
             {
-                MessageBox.Show("Поля не могут быть пустыми");
+                if (loginCheck.Count() == 0)
+                {
+                    cl.clientName = clientNameTB.Text;
+                    cl.clientSurname = clientSurnameTB.Text;
+                    cl.clientMiddlename = clientMiddlenameTB.Text;
+                    cl.clientMobileNumber = clientMobileNumberTB.Text.ToString();
+                    cl.clientEmail = clientEmailTB.Text;
+                    cl.clientLogin = clientLoginTB.Text;
+                    cl.clientPassword = clientPasswordTB.Text;
+
+                    SQLiteDataAccess.saveClient(cl);
+                    loadClientList();
+
+                    clientNameTB.Text = "";
+                    clientSurnameTB.Text = "";
+                    clientMiddlenameTB.Text = "";
+                    clientMobileNumberTB.Text = "";
+                    clientEmailTB.Text = "";
+                    clientLoginTB.Text = "";
+                    clientPasswordTB.Text = "";
+                }
+                else
+                {
+                    MessageBox.Show("Пользователь с таким логином уже существует");
+                }
             }
         }
 
@@ -343,10 +351,13 @@ namespace Autodealer
             if (carsDG.SelectedRows.Count != 0)
             {
                 DataGridViewRow row = carsDG.SelectedRows[0];
-                SQLiteDataAccess.addCarToArchive(Int32.Parse(row.Cells[0].Value.ToString()));
                 Cars c = new Cars();
-                if (carMarkTB.Text != "" && carModelTB.Text != "" && carReleaseDateDP.Value.ToString() != "" &&
-                        carColorTB.Text != "" && carPriceTB.Text != "")
+                if (string.IsNullOrWhiteSpace(carMarkTB.Text) || string.IsNullOrWhiteSpace(carModelTB.Text) || string.IsNullOrWhiteSpace(carReleaseDateDP.Text) ||
+                    string.IsNullOrWhiteSpace(carColorTB.Text) || string.IsNullOrWhiteSpace(carPriceTB.Text))
+                {
+                    MessageBox.Show("Поля не могут быть пустыми");
+                }
+                else
                 {
                     c.carMark = carMarkTB.Text;
                     c.carModel = carModelTB.Text;
@@ -354,11 +365,8 @@ namespace Autodealer
                     c.carColor = carColorTB.Text;
                     c.carPrice = Int32.Parse(carPriceTB.Value.ToString());
                     SQLiteDataAccess.saveCar(c);
+                    SQLiteDataAccess.addCarToArchive(Int32.Parse(row.Cells[0].Value.ToString()));
                     loadCarList();
-                }
-                else
-                {
-                    MessageBox.Show("Поля не могут быть пустыми");
                 }
             }
             else 
@@ -369,7 +377,7 @@ namespace Autodealer
             carMarkTB.Text = "";
             carModelTB.Text = "";
             carColorTB.Text = "";
-            carPriceTB.Text = "";
+            carPriceTB.Text = "0";
         }
 
         private void editBtn_Click(object sender, EventArgs e)
@@ -380,6 +388,7 @@ namespace Autodealer
                 editBtn.BackColor = Color.LightGreen;
                 carsDG.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
                 addCarButton.Enabled = false;
+                archieveCar.Enabled = false;
                 cellClicked = !cellClicked;
             }
             else
@@ -389,6 +398,7 @@ namespace Autodealer
                 addCarToArchive();
                 carsDG.SelectionMode = DataGridViewSelectionMode.CellSelect;
                 addCarButton.Enabled = true;
+                archieveCar.Enabled = true;
                 loadCarList();
             }
             isClicked = !isClicked;
@@ -411,6 +421,7 @@ namespace Autodealer
                 {
                     DataGridViewRow row = carsDG.SelectedRows[0];
                     SQLiteDataAccess.addCarToArchive(Int32.Parse(row.Cells[0].Value.ToString()));
+                    MessageBox.Show("Автомобиль успешно перемещен в архив");
                 }
                 else
                 {
@@ -420,7 +431,7 @@ namespace Autodealer
                 carsDG.SelectionMode = DataGridViewSelectionMode.CellSelect;
                 
                 loadCarList();
-                MessageBox.Show("Товар успешно убран из заказа");
+                
                 addCarButton.Enabled = true;
                 editBtn.Enabled = true;
                 hideTB.Visible = true;
@@ -433,10 +444,14 @@ namespace Autodealer
             if(clientDG.SelectedRows.Count != 0)
             {
                 DataGridViewRow row = clientDG.SelectedRows[0];
-                SQLiteDataAccess.addClientToArchive(Int32.Parse(row.Cells[0].Value.ToString()));
                 ClientsAuth cl = new ClientsAuth();
-                if (clientNameTB.Text != "" && clientSurnameTB.Text != "" && clientMiddlenameTB.Text != "" &&
-                        clientMobileNumberTB.Text != "" && clientEmailTB.Text != "" && clientLoginTB.Text != "" && clientPasswordTB.Text != "")
+                if (string.IsNullOrWhiteSpace(clientNameTB.Text) || string.IsNullOrWhiteSpace(clientSurnameTB.Text) || string.IsNullOrWhiteSpace(clientMiddlenameTB.Text) ||
+                    string.IsNullOrWhiteSpace(clientEmailTB.Text) || string.IsNullOrWhiteSpace(clientLoginTB.Text) ||
+                        string.IsNullOrWhiteSpace(clientPasswordTB.Text) || (clientMobileNumberTB.MaskCompleted == false || clientMobileNumberTB.Text.Length != 10))
+                {
+                    MessageBox.Show("Поля не могут быть пустыми");
+                }
+                else
                 {
                     cl.clientName = clientNameTB.Text;
                     cl.clientSurname = clientSurnameTB.Text;
@@ -446,19 +461,8 @@ namespace Autodealer
                     cl.clientLogin = clientLoginTB.Text;
                     cl.clientPassword = clientPasswordTB.Text;
                     SQLiteDataAccess.saveClient(cl);
+                    SQLiteDataAccess.addClientToArchive(Int32.Parse(row.Cells[0].Value.ToString()));
                     loadClientList();
-
-                    clientNameTB.Text = "";
-                    clientSurnameTB.Text = "";
-                    clientMiddlenameTB.Text = "";
-                    clientMobileNumberTB.Text = "";
-                    clientEmailTB.Text = "";
-                    clientLoginTB.Text = "";
-                    clientPasswordTB.Text = "";
-                }
-                else
-                {
-                    MessageBox.Show("Поля не могут быть пустыми");
                 }
             }
             else
@@ -473,6 +477,7 @@ namespace Autodealer
                 clientEditBtn.BackColor = Color.LightGreen;
                 clientDG.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
                 addClientBtn.Enabled = false;
+                clientAddToArchiveBtn.Enabled = false;
                 cellClicked = !cellClicked;
             }
             else
@@ -481,9 +486,18 @@ namespace Autodealer
                 addClientToArchive();
                 clientDG.SelectionMode = DataGridViewSelectionMode.CellSelect;
                 addClientBtn.Enabled = true;
+                clientAddToArchiveBtn.Enabled = true;
                 loadClientList();
             }
             isClicked = !isClicked;
+
+            clientNameTB.Text = "";
+            clientSurnameTB.Text = "";
+            clientMiddlenameTB.Text = "";
+            clientMobileNumberTB.Text = "";
+            clientEmailTB.Text = "";
+            clientLoginTB.Text = "";
+            clientPasswordTB.Text = "";
         }
 
         private void clientDG_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -518,6 +532,7 @@ namespace Autodealer
                 {
                     DataGridViewRow row = clientDG.SelectedRows[0];
                     SQLiteDataAccess.addClientToArchive(Int32.Parse(row.Cells[0].Value.ToString()));
+                    MessageBox.Show("Клиент успешно перемещен в архив");
                 }
                 else
                 {
@@ -532,7 +547,6 @@ namespace Autodealer
                 addClientBtn.Enabled = true;
                 editBtn.Enabled = true;
                 hideClientTBs.Visible = true;
-                MessageBox.Show("Клиент успешно убран из заказа");
             }
             isClicked = !isClicked;
         }
@@ -541,10 +555,14 @@ namespace Autodealer
             if(staffDG.SelectedRows.Count != 0)
             {
                 DataGridViewRow row = staffDG.SelectedRows[0];
-                SQLiteDataAccess.addStaffToArchive(Int32.Parse(row.Cells[0].Value.ToString()));
                 Staff s = new Staff();
-                if (staffNameTB.Text != "" && staffSurnameTB.Text != "" && staffMiddlenameTB.Text != "" &&
-                        staffMobileNumberTB.Text != "" && staffEmailTB.Text != "" && staffLoginTB.Text != "" && staffPasswordTB.Text != "" && staffRoleCB.Text != "")
+                if (string.IsNullOrWhiteSpace(staffNameTB.Text) || string.IsNullOrWhiteSpace(staffSurnameTB.Text) || string.IsNullOrWhiteSpace(staffMiddlenameTB.Text) ||
+                    string.IsNullOrWhiteSpace(staffEmailTB.Text) || string.IsNullOrWhiteSpace(staffLoginTB.Text) ||
+                        string.IsNullOrWhiteSpace(staffPasswordTB.Text) || string.IsNullOrWhiteSpace(staffRoleCB.Text) || (staffMobileNumberTB.MaskCompleted == false || staffMobileNumberTB.Text.Length != 10))
+                {
+                    MessageBox.Show("Поля не могут быть пустыми");
+                }
+                else
                 {
                     s.name = staffNameTB.Text;
                     s.surname = staffSurnameTB.Text;
@@ -555,19 +573,8 @@ namespace Autodealer
                     s.password = staffPasswordTB.Text;
                     s.role = staffRoleCB.Text;
                     SQLiteDataAccess.saveStaff(s);
+                    SQLiteDataAccess.addStaffToArchive(Int32.Parse(row.Cells[0].Value.ToString()));
                     loadStaffList();
-                    staffNameTB.Text = "";
-                    staffSurnameTB.Text = "";
-                    staffMiddlenameTB.Text = "";
-                    staffMobileNumberTB.Text = "";
-                    staffEmailTB.Text = "";
-                    staffLoginTB.Text = "";
-                    staffPasswordTB.Text = "";
-                    staffRoleCB.Text = "";
-                }
-                else
-                {
-                    MessageBox.Show("Поля не могут быть пустыми");
                 }
             }
             else
@@ -582,6 +589,7 @@ namespace Autodealer
                 editStaffBtn.BackColor = Color.LightGreen;
                 staffDG.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
                 addStaffBtn.Enabled = false;
+                archiveStaffBtn.Enabled = false;
                 cellClicked = !cellClicked;
             }
             else
@@ -590,9 +598,19 @@ namespace Autodealer
                 addStaffToArchive();
                 staffDG.SelectionMode = DataGridViewSelectionMode.CellSelect;
                 addStaffBtn.Enabled = true;
+                archiveStaffBtn.Enabled = true;
                 loadStaffList();
             }
             isClicked = !isClicked;
+
+            staffNameTB.Text = "";
+            staffSurnameTB.Text = "";
+            staffMiddlenameTB.Text = "";
+            staffMobileNumberTB.Text = "";
+            staffEmailTB.Text = "";
+            staffLoginTB.Text = "";
+            staffPasswordTB.Text = "";
+            staffRoleCB.SelectedIndex = -1;
         }
 
         private void archiveStaffBtn_Click(object sender, EventArgs e)
@@ -612,6 +630,7 @@ namespace Autodealer
                 {
                     DataGridViewRow row = staffDG.SelectedRows[0];
                     SQLiteDataAccess.addStaffToArchive(Int32.Parse(row.Cells[0].Value.ToString()));
+                    MessageBox.Show("Сотрудник успешно перемещен в архив");
                 }
                 else
                 {
@@ -848,6 +867,7 @@ namespace Autodealer
                 archiveOrderBtn.BackColor = Color.LightGreen;
                 ordersDG.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
                 hideResponsibleP.Visible = false;
+                createReport.Enabled = false;
             }
             else
             {
@@ -855,6 +875,7 @@ namespace Autodealer
                 {
                     DataGridViewRow row = ordersDG.SelectedRows[0];
                     SQLiteDataAccess.addAllOrdersToArchive(Int32.Parse(row.Cells[0].Value.ToString()));
+                    MessageBox.Show("Заказ успешно перемещен в архив");
                 }
                 else
                 {
@@ -864,7 +885,6 @@ namespace Autodealer
                 ordersDG.SelectionMode = DataGridViewSelectionMode.CellSelect;
                 archiveOrderBtn.BackColor = Color.DeepSkyBlue;
                 hideResponsibleP.Visible = true;
-                MessageBox.Show("Заказ успешно перемещен в архив");
             }
             isClicked = !isClicked;
         }

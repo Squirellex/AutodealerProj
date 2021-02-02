@@ -48,3 +48,10 @@ C:\Users\Squir\Documents\Учеба\МДМ\AutodealerProj\Autodealer\Autodealer\
 C:\Users\Squir\Documents\Учеба\МДМ\AutodealerProj\Autodealer\Autodealer\bin\Release\Newtonsoft.Json.xml
 C:\Users\Squir\Documents\Учеба\МДМ\AutodealerProj\Autodealer\Autodealer\obj\Release\Autodealer.Clients.resources
 C:\Users\Squir\Documents\Учеба\МДМ\AutodealerProj\Autodealer\Autodealer\obj\Release\Autodealer.Registration.resources
+C:\Users\Squir\Documents\Учеба\МДМ\AutodealerProj\Autodealer\Autodealer\bin\Release\bin\Debug\x64\SQLite.Interop.dll
+C:\Users\Squir\Documents\Учеба\МДМ\AutodealerProj\Autodealer\Autodealer\bin\Release\bin\Debug\x86\SQLite.Interop.dll
+C:\Users\Squir\Documents\Учеба\МДМ\AutodealerProj\Autodealer\Autodealer\bin\Release\SQLite.Interop.dll
+C:\Users\Squir\Documents\Учеба\МДМ\AutodealerProj\Autodealer\Autodealer\bin\Release\Autodealer.exe.manifest
+C:\Users\Squir\Documents\Учеба\МДМ\AutodealerProj\Autodealer\Autodealer\bin\Release\Autodealer.application
+C:\Users\Squir\Documents\Учеба\МДМ\AutodealerProj\Autodealer\Autodealer\obj\Release\Autodealer.exe.manifest
+C:\Users\Squir\Documents\Учеба\МДМ\AutodealerProj\Autodealer\Autodealer\obj\Release\Autodealer.application

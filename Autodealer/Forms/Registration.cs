@@ -71,9 +71,15 @@ namespace Autodealer
         {
             var loginCheck = SQLiteDataAccess.clientLoginCheck(clientLoginTB.Text);
             ClientsAuth cl = new ClientsAuth();
-            if (clientNameTB.Text != "" && clientSurnameTB.Text != "" && clientMiddlenameTB.Text != "" &&
-                    clientMobileNumberTB.Text != "" && clientEmailTB.Text != "" && clientLoginTB.Text != "" && clientPasswordTB.Text != "")
+            if (string.IsNullOrWhiteSpace(clientNameTB.Text) || string.IsNullOrWhiteSpace(clientSurnameTB.Text) || string.IsNullOrWhiteSpace(clientMiddlenameTB.Text) ||
+                    string.IsNullOrWhiteSpace(clientEmailTB.Text) || string.IsNullOrWhiteSpace(clientLoginTB.Text) ||
+                        string.IsNullOrWhiteSpace(clientPasswordTB.Text) || (clientMobileNumberTB.MaskCompleted == false || clientMobileNumberTB.Text.Length != 10))
             {
+                MessageBox.Show("Поля не могут быть пустыми");
+            }
+            else
+            {
+                
                 if(loginCheck.Count() == 0)
                 {
                     cl.clientName = clientNameTB.Text;
@@ -94,11 +100,6 @@ namespace Autodealer
                 {
                     MessageBox.Show("Пользователь с таким логином уже существует");
                 }
-                
-            }
-            else
-            {
-                MessageBox.Show("Поля не могут быть пустыми");
             }
             /*carMarkTB.Text = "";
             carModelTB.Text = "";
