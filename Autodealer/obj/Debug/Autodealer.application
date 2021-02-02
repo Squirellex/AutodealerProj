@@ -7,14 +7,14 @@
     <framework targetVersion="4.7.2" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="Autodealer.exe.manifest" size="19427">
+    <dependentAssembly dependencyType="install" codebase="Autodealer.exe.manifest" size="19829">
       <assemblyIdentity name="Autodealer.exe" version="1.0.0.5" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>vhUSBzfRC6GdzEaRduADBX3Jn7dL3lnjzjknvOxbZrw=</dsig:DigestValue>
+        <dsig:DigestValue>o72lVfxiOxKy1xDADZ46Q82xTwCn/F+0jq1LzYwf9Vs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

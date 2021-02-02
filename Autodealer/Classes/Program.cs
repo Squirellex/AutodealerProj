@@ -16,6 +16,9 @@ namespace Autodealer
         [STAThread]
         static void Main()
         {
+            string filePath = @".\AutodealerWarehouse.db";
+            File.SetAttributes(filePath, FileAttributes.Normal);
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Authorization());

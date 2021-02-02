@@ -18,6 +18,12 @@ namespace Autodealer
         {
             return ConfigurationManager.ConnectionStrings[id].ConnectionString;
         }
+
+        public static string LoadWHConnectionString(string id = "Warehouse")
+        {
+            return ConfigurationManager.ConnectionStrings[id].ConnectionString;
+        }
+
         public static List<Cars> loadCars()
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
@@ -41,6 +47,10 @@ namespace Autodealer
                 Cars car = cnn.QueryFirst<Cars>("select * from Cars where id="+id);
                 cnn.Execute("update Cars set carArchived=1 where id="+id);
                 cnn.Execute("insert into ArchievedCars (archievedCarId) values (" + id + ")");
+                using (IDbConnection cnnWH = new SQLiteConnection(LoadWHConnectionString()))
+                {
+                    cnnWH.Execute("insert into Cars (carMark, carReleaseDate, carModel, carColor, carPrice) values (@carMark, @carReleaseDate, @carModel, @carColor, @carPrice)", car);
+                }
             }
         }
         public static void addClientToArchive(int id)
@@ -50,6 +60,11 @@ namespace Autodealer
                 ClientsAuth cl = cnn.QueryFirst<ClientsAuth>("select * from Clients where id=" + id);
                 cnn.Execute("update Clients set clientArchived=1 where id=" + id);
                 cnn.Execute("insert into ArchivedClients (archivedClientId) values (" + id + ")");
+                using (IDbConnection cnnWH = new SQLiteConnection(LoadWHConnectionString()))
+                {
+                    cnnWH.Execute("insert into Clients (clientName, clientSurname, clientMiddlename, clientMobileNumber, clientEmail, clientLogin, clientPassword) " +
+                        "values (@clientName, @clientSurname, @clientMiddlename, @clientMobileNumber, @clientEmail, @clientLogin, @clientPassword)", cl);
+                }
             }
         }
 
@@ -60,15 +75,34 @@ namespace Autodealer
                 Staff cl = cnn.QueryFirst<Staff>("select * from Workers where id=" + id);
                 cnn.Execute("update Workers set Archived=1 where id=" + id);
                 cnn.Execute("insert into ArchivedWorkers (archivedWorkersId) values (" + id + ")");
+                using (IDbConnection cnnWH = new SQLiteConnection(LoadWHConnectionString()))
+                {
+                    cnnWH.Execute("insert into Workers (name, surname, middlename, mobileNumber, email, login, password, role) " +
+                    "values (@name, @surname, @middlename, @mobileNumber, @email, @login, @password, @role)", cl);
+                }
             }
         }
         public static void addOrdersToArchive(int id)
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                Orders orders = cnn.QueryFirst<Orders>("select * from Orders where car_id = " + id);
-                cnn.Execute("update Orders set Archived=1 where car_id=" + id);
+                Orders orders = cnn.QueryFirst<Orders>("select * from Orders where id = " + id);
+                cnn.Execute("update Orders set Archived=1 where id=" + id);
                 cnn.Execute("insert into ArchivedOrders (archivedOrdersId) values (" + orders.id + ")");
+                AOToWorkers output = cnn.QueryFirst<AOToWorkers>("select o.id, c.carMark, c.carModel, c.carReleaseDate, c.carColor, c.carPrice, " +
+                        "W.name, W.surname, W.middlename, " +
+                        "C2.clientName, C2.clientSurname, C2.clientMiddlename, C2.clientMobileNumber, C2.clientEmail " +
+                        "from Orders as o " +
+                        "join Cars c on o.car_id = c.id " +
+                        "join Workers W on o.worker_id = W.id " +
+                        "join Clients C2 on o.client_id = C2.id where o.id = " + id);
+                using (IDbConnection cnnWH = new SQLiteConnection(LoadWHConnectionString()))
+                {
+                    cnnWH.Execute("insert into Orders (carMark, carModel, carReleaseDate, carColor, carPrice, clientName, clientSurname," +
+                        "clientMiddlename, clientMobileNumber, clientEmail, workerName, workerSurname, workerMiddlename) " +
+                        "values (@carMark, @carModel, @carReleaseDate, @carColor, @carPrice, @clientName, @clientSurname," +
+                        "@clientMiddlename, @clientMobileNumber, @clientEmail, @name, @surname, @middlename)", output);
+                }
             }
         }
         public static void addAllOrdersToArchive(int id)
@@ -78,6 +112,20 @@ namespace Autodealer
                 Orders orders = cnn.QueryFirst<Orders>("select * from Orders where id = " + id);
                 cnn.Execute("update Orders set Archived=1 where id=" + id);
                 cnn.Execute("insert into ArchivedOrders (archivedOrdersId) values (" + id + ")");
+                AOToWorkers output = cnn.QueryFirst<AOToWorkers>("select o.id, c.carMark, c.carModel, c.carReleaseDate, c.carColor, c.carPrice, " +
+                        "W.name, W.surname, W.middlename, " +
+                        "C2.clientName, C2.clientSurname, C2.clientMiddlename, C2.clientMobileNumber, C2.clientEmail " +
+                        "from Orders as o " +
+                        "join Cars c on o.car_id = c.id " +
+                        "join Workers W on o.worker_id = W.id " +
+                        "join Clients C2 on o.client_id = C2.id where o.id = " + id);
+                using (IDbConnection cnnWH = new SQLiteConnection(LoadWHConnectionString()))
+                {
+                    cnnWH.Execute("insert into Orders (carMark, carModel, carReleaseDate, carColor, carPrice, clientName, clientSurname," +
+                        "clientMiddlename, clientMobileNumber, clientEmail, workerName, workerSurname, workerMiddlename) " +
+                        "values (@carMark, @carModel, @carReleaseDate, @carColor, @carPrice, @clientName, @clientSurname," +
+                        "@clientMiddlename, @clientMobileNumber, @clientEmail, @name, @surname, @middlename)", output);
+                }
             }
         }
 
@@ -142,6 +190,7 @@ namespace Autodealer
                     "values (@clientName, @clientSurname, @clientMiddlename, @clientMobileNumber, @clientEmail, @clientLogin, @clientPassword)", clients);
             }
         }
+
         public static void saveOrder(Orders order)
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
@@ -149,6 +198,7 @@ namespace Autodealer
                 cnn.Execute("insert into Orders (car_id, client_id) VALUES (@car_id, @client_id)", order);
             }
         }
+
         public static void addStaffToOrder(Orders staff)
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
@@ -182,7 +232,7 @@ namespace Autodealer
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                var output = cnn.Query<AOToClient>("select c.*, C2.clientName, C2.clientSurname from Orders as o" +
+                var output = cnn.Query<AOToClient>("select c.*, o.id, C2.clientName, C2.clientSurname from Orders as o" +
                     " join Cars c on o.car_id = c.id" +
                     " join Clients C2 on o.client_id = C2.id where client_id ='" +id+"' and Archived <> 1", new DynamicParameters());
                 return output.ToList();

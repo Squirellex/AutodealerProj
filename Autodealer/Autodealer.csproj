@@ -204,6 +204,9 @@
     <Content Include="SQLite.Interop.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="AutodealerWarehouse.db">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Autodealer_TemporaryKey.pfx" />
     <None Include="src\logo3.png" />
     <None Include="src\edit-user-male.png" />

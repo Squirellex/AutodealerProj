@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using System.Data.SQLite;
-
+using System.IO;
 
 namespace Autodealer
 {
@@ -38,6 +38,8 @@ namespace Autodealer
 
         private void closeBtn_Click(object sender, EventArgs e)
         {
+            string filePath = @".\AutodealerWarehouse.db";
+            File.SetAttributes(filePath, FileAttributes.ReadOnly);
             Environment.Exit(0);
         }
 

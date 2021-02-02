@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Autodealer.exe" size="357856">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Autodealer.exe" size="359904">
       <assemblyIdentity name="Autodealer" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>kJZbvU42+zPT51sR3K8VlZdPHRRTLRDJqcgYqfIKtBg=</dsig:DigestValue>
+        <dsig:DigestValue>xQiUOgQozzZ9dlPORovQkWYRQKZwK0xTtKgPTRgt+2g=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -294,13 +294,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="Autodealer.exe.config" size="965">
+  <file name="Autodealer.exe.config" size="1099">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>4sNxwHGpqM4k3/ikFnl8Gwuozzh5k3qt70r05EfP06g=</dsig:DigestValue>
+      <dsig:DigestValue>Dz3HbqMm1c/Vt6fEr7l9psLNWLiJDl55EkbPmVE2bCo=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Autodealer.ico" size="37203">
@@ -319,6 +319,15 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>x1HngmR86gmKklXYzf/vwIzo0Vn7TbxoQsfrWefvgHo=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="AutodealerWarehouse.db" size="73728">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>DFivAuvynu5ccpg6fKZP5PgzGAq/1dxlpc2de8CcmrU=</dsig:DigestValue>
     </hash>
   </file>
   <file name="bin\Debug\x64\SQLite.Interop.dll" size="1638912">

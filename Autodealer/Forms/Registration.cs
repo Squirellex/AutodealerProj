@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -42,6 +43,8 @@ namespace Autodealer
 
         private void closeBtn_Click(object sender, EventArgs e)
         {
+            string filePath = @".\AutodealerWarehouse.db";
+            File.SetAttributes(filePath, FileAttributes.ReadOnly);
             Environment.Exit(0);
         }
 

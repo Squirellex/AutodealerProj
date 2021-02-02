@@ -55,3 +55,4 @@ C:\Users\Squir\Documents\Учеба\МДМ\AutodealerProj\Autodealer\Autodealer\
 C:\Users\Squir\Documents\Учеба\МДМ\AutodealerProj\Autodealer\Autodealer\bin\Debug\bin\Debug\x64\SQLite.Interop.dll
 C:\Users\Squir\Documents\Учеба\МДМ\AutodealerProj\Autodealer\Autodealer\bin\Debug\bin\Debug\x86\SQLite.Interop.dll
 C:\Users\Squir\Documents\Учеба\МДМ\AutodealerProj\Autodealer\Autodealer\bin\Debug\SQLite.Interop.dll
+C:\Users\Squir\Documents\Учеба\МДМ\AutodealerProj\Autodealer\Autodealer\bin\Debug\AutodealerWarehouse.db

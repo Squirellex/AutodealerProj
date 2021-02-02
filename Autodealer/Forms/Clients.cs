@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using FontAwesome.Sharp;
 using System.Data.SQLite;
 using Autodealer.Classes;
+using System.IO;
 
 namespace Autodealer
 {
@@ -124,6 +125,8 @@ namespace Autodealer
 
         private void closeBtn_Click(object sender, EventArgs e)
         {
+            string filePath = @".\AutodealerWarehouse.db";
+            File.SetAttributes(filePath, FileAttributes.ReadOnly);
             Environment.Exit(0);
         }
 
