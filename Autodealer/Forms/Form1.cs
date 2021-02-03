@@ -21,6 +21,7 @@ namespace Autodealer
         private bool mouseDown;
         private Point lastLocation;
         private IconButton currentBtn;
+        private IconButton thisBtn;
         private Panel leftBorderBtn;
         private bool isClicked = true;
         private bool cellClicked = false;
@@ -30,7 +31,10 @@ namespace Autodealer
         List<Cars> cars = new List<Cars>();
         List<Staff> staff = new List<Staff>();
         List<ClientsAuth> client = new List<ClientsAuth>();
-
+        List<ArchivedCars> archivedCars = new List<ArchivedCars>();
+        List<ArchivedClients> archivedClients = new List<ArchivedClients>();
+        List<ArchivedOrders> archivedOrders = new List<ArchivedOrders>();
+        List<ArchivedStaff> archivedStaff = new List<ArchivedStaff>();
         List<AOD> allOrdersData = new List<AOD>();
         List<AOToWorkers> allOrdersToS = new List<AOToWorkers>();
         public bool StaffBtn
@@ -59,6 +63,9 @@ namespace Autodealer
             managementTC.Appearance = TabAppearance.FlatButtons;
             managementTC.ItemSize = new Size(0, 1);
             managementTC.SizeMode = TabSizeMode.Fixed;
+            archivesTC.Appearance = TabAppearance.FlatButtons;
+            archivesTC.ItemSize = new Size(0, 1);
+            archivesTC.SizeMode = TabSizeMode.Fixed;
             //LeftBtnColors
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(206, 3);
@@ -68,11 +75,16 @@ namespace Autodealer
             loadStaffList();
             loadClientList();
             loadAODList();
+            loadACarsList();
+            loadAClientsList();
+            loadAOrdersList();
+            loadAStaffList();
         }
         //......Задать цвета кнопкам управления..........................................................................
         private struct RGBColors
         {
             public static Color color1 = Color.FromArgb(227, 102, 134);
+            public static Color color2 = Color.FromArgb(230, 115, 55);
         }
         private void ActivateButton(object senderBtn, Color color)
         {
@@ -147,6 +159,16 @@ namespace Autodealer
         {
             ActivateButton(sender, RGBColors.color1);
             managementTC.SelectedIndex = 2;
+        }
+
+        private void archiveBtn_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color1);
+            loadACarsList();
+            loadAClientsList();
+            loadAOrdersList();
+            loadAStaffList();
+            managementTC.SelectedIndex = 5;
         }
 
         private void logoutBtn_Click(object sender, EventArgs e)
@@ -901,6 +923,94 @@ namespace Autodealer
         private void createReport_Click(object sender, EventArgs e)
         {
             Documents.createСonsentProcessingOfPersonalData();
+        }
+        private void ActivateArchiveButton(object senderBtn, Color color)
+        {
+            if (senderBtn != null)
+            {
+                DisableArchiveButton();
+
+                thisBtn = (IconButton)senderBtn;
+                thisBtn.BackColor = Color.FromArgb(0, 166, 222);
+                thisBtn.ForeColor = color;
+                thisBtn.IconColor = color;
+            }
+        }
+        private void DisableArchiveButton()
+        {
+            if (thisBtn != null)
+            {
+                thisBtn.BackColor = Color.DeepSkyBlue;
+                thisBtn.ForeColor = Color.White;
+                thisBtn.IconColor = Color.White;
+            }
+        }
+        private void carArchiveBtn_Click(object sender, EventArgs e)
+        {
+            ActivateArchiveButton(sender, RGBColors.color2);
+            archivesTC.SelectedIndex = 0;
+        }
+
+        private void clientArchiveBtn_Click(object sender, EventArgs e)
+        {
+            ActivateArchiveButton(sender, RGBColors.color2);
+            archivesTC.SelectedIndex = 1;
+        }
+
+        private void ordersArchiveBtn_Click(object sender, EventArgs e)
+        {
+            ActivateArchiveButton(sender, RGBColors.color2);
+            archivesTC.SelectedIndex = 2;
+        }
+
+        private void staffArchiveBtn_Click(object sender, EventArgs e)
+        {
+            ActivateArchiveButton(sender, RGBColors.color2);
+            archivesTC.SelectedIndex = 3;
+        }
+        private void wireUpACarsList()
+        {
+            archivedCarsDG.DataSource = null;
+            archivedCarsDG.DataSource = archivedCars;
+            archivedCarsDG.Columns["id"].Visible = false;
+        }
+        private void loadACarsList()
+        {
+            archivedCars = SQLiteDataAccess.loadArchivedCars();
+            wireUpACarsList();
+        }
+        private void wireUpAClientsList()
+        {
+            archivedClientsDG.DataSource = null;
+            archivedClientsDG.DataSource = archivedClients;
+            archivedClientsDG.Columns["id"].Visible = false;
+        }
+        private void loadAClientsList()
+        {
+            archivedClients = SQLiteDataAccess.loadArchivedClients();
+            wireUpAClientsList();
+        }
+        private void wireUpAOrdersList()
+        {
+            archivedOrdersDG.DataSource = null;
+            archivedOrdersDG.DataSource = archivedOrders;
+            archivedOrdersDG.Columns["id"].Visible = false;
+        }
+        private void loadAOrdersList()
+        {
+            archivedOrders = SQLiteDataAccess.loadArchivedOrders();
+            wireUpAOrdersList();
+        }
+        private void wireUpAStaffList()
+        {
+            archivedStaffDG.DataSource = null;
+            archivedStaffDG.DataSource = archivedStaff;
+            archivedStaffDG.Columns["id"].Visible = false;
+        }
+        private void loadAStaffList()
+        {
+            archivedStaff = SQLiteDataAccess.loadArchivedStaff();
+            wireUpAStaffList();
         }
     }
 }

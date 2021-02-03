@@ -5,11 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Autodealer
+namespace Autodealer.Classes
 {
-    public class Cars
+    public class ArchivedCars
     {
-        public int id{ get; set; }
+        public int id { get; set; }
         [DisplayName("Марка автомобиля")]
         public string carMark { get; set; }
 
@@ -24,6 +24,5 @@ namespace Autodealer
 
         [DisplayName("Цена $")]
         public int carPrice { get; set; }
-        public int carArchieved { get; set; }
     }
 }

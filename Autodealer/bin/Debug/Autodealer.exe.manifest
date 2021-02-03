@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Autodealer.exe" size="359904">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Autodealer.exe" size="373728">
       <assemblyIdentity name="Autodealer" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>xQiUOgQozzZ9dlPORovQkWYRQKZwK0xTtKgPTRgt+2g=</dsig:DigestValue>
+        <dsig:DigestValue>yVQErecmXb80kH9aI6q0u3wXHy23Toan/QCMfcJbRLI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -318,7 +318,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>x1HngmR86gmKklXYzf/vwIzo0Vn7TbxoQsfrWefvgHo=</dsig:DigestValue>
+      <dsig:DigestValue>4AGBOK03gS5k5wQwZ4Lq8WO8q9RUxupPD1Quqxe9YQk=</dsig:DigestValue>
     </hash>
   </file>
   <file name="AutodealerWarehouse.db" size="73728">
@@ -327,7 +327,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>DFivAuvynu5ccpg6fKZP5PgzGAq/1dxlpc2de8CcmrU=</dsig:DigestValue>
+      <dsig:DigestValue>/Ssmf42BL4gcLhlGqb7aVlSB0nPot6+GGWvgt8/f39w=</dsig:DigestValue>
     </hash>
   </file>
   <file name="bin\Debug\x64\SQLite.Interop.dll" size="1638912">

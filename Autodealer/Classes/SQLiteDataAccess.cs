@@ -32,6 +32,38 @@ namespace Autodealer
                 return output.ToList();
             }
         }
+        public static List<ArchivedCars> loadArchivedCars()
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadWHConnectionString()))
+            {
+                var output = cnn.Query<ArchivedCars>("select * from Cars", new DynamicParameters());
+                return output.ToList();
+            }
+        }
+        public static List<ArchivedClients> loadArchivedClients()
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadWHConnectionString()))
+            {
+                var output = cnn.Query<ArchivedClients>("select * from Clients", new DynamicParameters());
+                return output.ToList();
+            }
+        }
+        public static List<ArchivedOrders> loadArchivedOrders()
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadWHConnectionString()))
+            {
+                var output = cnn.Query<ArchivedOrders>("select * from Orders", new DynamicParameters());
+                return output.ToList();
+            }
+        }
+        public static List<ArchivedStaff> loadArchivedStaff()
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadWHConnectionString()))
+            {
+                var output = cnn.Query<ArchivedStaff>("select * from Workers", new DynamicParameters());
+                return output.ToList();
+            }
+        }
 
         public static void saveCar(Cars car)
         {

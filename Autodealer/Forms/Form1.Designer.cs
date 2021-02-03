@@ -45,6 +45,26 @@ namespace Autodealer
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.sidePan = new System.Windows.Forms.Panel();
             this.staffBtn = new FontAwesome.Sharp.IconButton();
@@ -134,6 +154,21 @@ namespace Autodealer
             this.addStaffBtn = new FontAwesome.Sharp.IconButton();
             this.welcomePage = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.archiveBtn = new FontAwesome.Sharp.IconButton();
+            this.archiveTabPage = new System.Windows.Forms.TabPage();
+            this.staffArchiveBtn = new FontAwesome.Sharp.IconButton();
+            this.ordersArchiveBtn = new FontAwesome.Sharp.IconButton();
+            this.clientArchiveBtn = new FontAwesome.Sharp.IconButton();
+            this.carArchiveBtn = new FontAwesome.Sharp.IconButton();
+            this.archivedCarsDG = new System.Windows.Forms.DataGridView();
+            this.archivesTC = new System.Windows.Forms.TabControl();
+            this.archivedCarsPage = new System.Windows.Forms.TabPage();
+            this.archivedClientsPage = new System.Windows.Forms.TabPage();
+            this.archivedOrdersPage = new System.Windows.Forms.TabPage();
+            this.archivedStaffPage = new System.Windows.Forms.TabPage();
+            this.archivedClientsDG = new System.Windows.Forms.DataGridView();
+            this.archivedOrdersDG = new System.Windows.Forms.DataGridView();
+            this.archivedStaffDG = new System.Windows.Forms.DataGridView();
             this.sidePan.SuspendLayout();
             this.controlPan.SuspendLayout();
             this.managementTC.SuspendLayout();
@@ -151,11 +186,22 @@ namespace Autodealer
             this.hideStaffTBs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.staffDG)).BeginInit();
             this.welcomePage.SuspendLayout();
+            this.archiveTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.archivedCarsDG)).BeginInit();
+            this.archivesTC.SuspendLayout();
+            this.archivedCarsPage.SuspendLayout();
+            this.archivedClientsPage.SuspendLayout();
+            this.archivedOrdersPage.SuspendLayout();
+            this.archivedStaffPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.archivedClientsDG)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.archivedOrdersDG)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.archivedStaffDG)).BeginInit();
             this.SuspendLayout();
             // 
             // sidePan
             // 
             this.sidePan.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.sidePan.Controls.Add(this.archiveBtn);
             this.sidePan.Controls.Add(this.staffBtn);
             this.sidePan.Controls.Add(this.logoutBtn);
             this.sidePan.Controls.Add(this.ordersBtn);
@@ -178,7 +224,7 @@ namespace Autodealer
             this.staffBtn.IconColor = System.Drawing.Color.White;
             this.staffBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.staffBtn.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.staffBtn.Location = new System.Drawing.Point(0, 344);
+            this.staffBtn.Location = new System.Drawing.Point(0, 337);
             this.staffBtn.Name = "staffBtn";
             this.staffBtn.Size = new System.Drawing.Size(206, 59);
             this.staffBtn.TabIndex = 4;
@@ -218,7 +264,7 @@ namespace Autodealer
             this.ordersBtn.IconColor = System.Drawing.Color.White;
             this.ordersBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ordersBtn.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.ordersBtn.Location = new System.Drawing.Point(0, 279);
+            this.ordersBtn.Location = new System.Drawing.Point(0, 272);
             this.ordersBtn.Name = "ordersBtn";
             this.ordersBtn.Size = new System.Drawing.Size(206, 59);
             this.ordersBtn.TabIndex = 2;
@@ -238,7 +284,7 @@ namespace Autodealer
             this.clientsBtn.IconColor = System.Drawing.Color.White;
             this.clientsBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.clientsBtn.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.clientsBtn.Location = new System.Drawing.Point(0, 214);
+            this.clientsBtn.Location = new System.Drawing.Point(0, 207);
             this.clientsBtn.Name = "clientsBtn";
             this.clientsBtn.Size = new System.Drawing.Size(206, 59);
             this.clientsBtn.TabIndex = 1;
@@ -258,7 +304,7 @@ namespace Autodealer
             this.carsBtn.IconColor = System.Drawing.Color.White;
             this.carsBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.carsBtn.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.carsBtn.Location = new System.Drawing.Point(0, 149);
+            this.carsBtn.Location = new System.Drawing.Point(0, 142);
             this.carsBtn.Name = "carsBtn";
             this.carsBtn.Size = new System.Drawing.Size(206, 59);
             this.carsBtn.TabIndex = 0;
@@ -312,6 +358,7 @@ namespace Autodealer
             this.managementTC.Controls.Add(this.ordersTabPage);
             this.managementTC.Controls.Add(this.staffTabPage);
             this.managementTC.Controls.Add(this.welcomePage);
+            this.managementTC.Controls.Add(this.archiveTabPage);
             this.managementTC.Dock = System.Windows.Forms.DockStyle.Fill;
             this.managementTC.Location = new System.Drawing.Point(206, 32);
             this.managementTC.Margin = new System.Windows.Forms.Padding(0);
@@ -1476,6 +1523,382 @@ namespace Autodealer
             this.panel1.Size = new System.Drawing.Size(421, 305);
             this.panel1.TabIndex = 1;
             // 
+            // archiveBtn
+            // 
+            this.archiveBtn.FlatAppearance.BorderSize = 0;
+            this.archiveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.archiveBtn.Font = new System.Drawing.Font("Lucida Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.archiveBtn.ForeColor = System.Drawing.Color.White;
+            this.archiveBtn.IconChar = FontAwesome.Sharp.IconChar.Archive;
+            this.archiveBtn.IconColor = System.Drawing.Color.White;
+            this.archiveBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.archiveBtn.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.archiveBtn.Location = new System.Drawing.Point(0, 402);
+            this.archiveBtn.Name = "archiveBtn";
+            this.archiveBtn.Size = new System.Drawing.Size(206, 59);
+            this.archiveBtn.TabIndex = 5;
+            this.archiveBtn.Text = "Архивы";
+            this.archiveBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.archiveBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.archiveBtn.UseVisualStyleBackColor = true;
+            this.archiveBtn.Click += new System.EventHandler(this.archiveBtn_Click);
+            // 
+            // archiveTabPage
+            // 
+            this.archiveTabPage.Controls.Add(this.archivesTC);
+            this.archiveTabPage.Controls.Add(this.staffArchiveBtn);
+            this.archiveTabPage.Controls.Add(this.clientArchiveBtn);
+            this.archiveTabPage.Controls.Add(this.ordersArchiveBtn);
+            this.archiveTabPage.Controls.Add(this.carArchiveBtn);
+            this.archiveTabPage.Location = new System.Drawing.Point(4, 25);
+            this.archiveTabPage.Name = "archiveTabPage";
+            this.archiveTabPage.Size = new System.Drawing.Size(735, 502);
+            this.archiveTabPage.TabIndex = 5;
+            this.archiveTabPage.Text = "Архивы";
+            this.archiveTabPage.UseVisualStyleBackColor = true;
+            // 
+            // staffArchiveBtn
+            // 
+            this.staffArchiveBtn.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.staffArchiveBtn.FlatAppearance.BorderSize = 0;
+            this.staffArchiveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.staffArchiveBtn.Font = new System.Drawing.Font("Lucida Sans", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.staffArchiveBtn.ForeColor = System.Drawing.Color.White;
+            this.staffArchiveBtn.IconChar = FontAwesome.Sharp.IconChar.UsersCog;
+            this.staffArchiveBtn.IconColor = System.Drawing.Color.White;
+            this.staffArchiveBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.staffArchiveBtn.IconSize = 46;
+            this.staffArchiveBtn.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.staffArchiveBtn.Location = new System.Drawing.Point(552, 4);
+            this.staffArchiveBtn.Name = "staffArchiveBtn";
+            this.staffArchiveBtn.Size = new System.Drawing.Size(177, 48);
+            this.staffArchiveBtn.TabIndex = 9;
+            this.staffArchiveBtn.Text = "Персонал";
+            this.staffArchiveBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.staffArchiveBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.staffArchiveBtn.UseVisualStyleBackColor = false;
+            this.staffArchiveBtn.Click += new System.EventHandler(this.staffArchiveBtn_Click);
+            // 
+            // ordersArchiveBtn
+            // 
+            this.ordersArchiveBtn.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.ordersArchiveBtn.FlatAppearance.BorderSize = 0;
+            this.ordersArchiveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ordersArchiveBtn.Font = new System.Drawing.Font("Lucida Sans", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ordersArchiveBtn.ForeColor = System.Drawing.Color.White;
+            this.ordersArchiveBtn.IconChar = FontAwesome.Sharp.IconChar.ListAlt;
+            this.ordersArchiveBtn.IconColor = System.Drawing.Color.White;
+            this.ordersArchiveBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ordersArchiveBtn.IconSize = 46;
+            this.ordersArchiveBtn.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.ordersArchiveBtn.Location = new System.Drawing.Point(369, 4);
+            this.ordersArchiveBtn.Name = "ordersArchiveBtn";
+            this.ordersArchiveBtn.Size = new System.Drawing.Size(177, 48);
+            this.ordersArchiveBtn.TabIndex = 8;
+            this.ordersArchiveBtn.Text = "Заказы";
+            this.ordersArchiveBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ordersArchiveBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ordersArchiveBtn.UseVisualStyleBackColor = false;
+            this.ordersArchiveBtn.Click += new System.EventHandler(this.ordersArchiveBtn_Click);
+            // 
+            // clientArchiveBtn
+            // 
+            this.clientArchiveBtn.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.clientArchiveBtn.FlatAppearance.BorderSize = 0;
+            this.clientArchiveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.clientArchiveBtn.Font = new System.Drawing.Font("Lucida Sans", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clientArchiveBtn.ForeColor = System.Drawing.Color.White;
+            this.clientArchiveBtn.IconChar = FontAwesome.Sharp.IconChar.Male;
+            this.clientArchiveBtn.IconColor = System.Drawing.Color.White;
+            this.clientArchiveBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.clientArchiveBtn.IconSize = 46;
+            this.clientArchiveBtn.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.clientArchiveBtn.Location = new System.Drawing.Point(186, 4);
+            this.clientArchiveBtn.Name = "clientArchiveBtn";
+            this.clientArchiveBtn.Size = new System.Drawing.Size(177, 48);
+            this.clientArchiveBtn.TabIndex = 7;
+            this.clientArchiveBtn.Text = "Клиенты";
+            this.clientArchiveBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.clientArchiveBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.clientArchiveBtn.UseVisualStyleBackColor = false;
+            this.clientArchiveBtn.Click += new System.EventHandler(this.clientArchiveBtn_Click);
+            // 
+            // carArchiveBtn
+            // 
+            this.carArchiveBtn.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.carArchiveBtn.FlatAppearance.BorderSize = 0;
+            this.carArchiveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.carArchiveBtn.Font = new System.Drawing.Font("Lucida Sans", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.carArchiveBtn.ForeColor = System.Drawing.Color.White;
+            this.carArchiveBtn.IconChar = FontAwesome.Sharp.IconChar.Car;
+            this.carArchiveBtn.IconColor = System.Drawing.Color.White;
+            this.carArchiveBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.carArchiveBtn.IconSize = 46;
+            this.carArchiveBtn.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.carArchiveBtn.Location = new System.Drawing.Point(3, 4);
+            this.carArchiveBtn.Name = "carArchiveBtn";
+            this.carArchiveBtn.Size = new System.Drawing.Size(177, 48);
+            this.carArchiveBtn.TabIndex = 6;
+            this.carArchiveBtn.Text = "Автомобили";
+            this.carArchiveBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.carArchiveBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.carArchiveBtn.UseVisualStyleBackColor = false;
+            this.carArchiveBtn.Click += new System.EventHandler(this.carArchiveBtn_Click);
+            // 
+            // archivedCarsDG
+            // 
+            this.archivedCarsDG.AllowUserToAddRows = false;
+            this.archivedCarsDG.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control;
+            this.archivedCarsDG.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle17;
+            this.archivedCarsDG.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.archivedCarsDG.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.archivedCarsDG.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.archivedCarsDG.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.archivedCarsDG.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle18;
+            this.archivedCarsDG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Lucida Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.archivedCarsDG.DefaultCellStyle = dataGridViewCellStyle19;
+            this.archivedCarsDG.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.archivedCarsDG.Location = new System.Drawing.Point(3, 0);
+            this.archivedCarsDG.Name = "archivedCarsDG";
+            this.archivedCarsDG.ReadOnly = true;
+            this.archivedCarsDG.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.archivedCarsDG.RowHeadersDefaultCellStyle = dataGridViewCellStyle20;
+            this.archivedCarsDG.RowHeadersVisible = false;
+            this.archivedCarsDG.RowHeadersWidth = 10;
+            this.archivedCarsDG.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.archivedCarsDG.RowsDefaultCellStyle = dataGridViewCellStyle21;
+            this.archivedCarsDG.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.archivedCarsDG.Size = new System.Drawing.Size(726, 422);
+            this.archivedCarsDG.TabIndex = 12;
+            // 
+            // archivesTC
+            // 
+            this.archivesTC.Controls.Add(this.archivedCarsPage);
+            this.archivesTC.Controls.Add(this.archivedClientsPage);
+            this.archivesTC.Controls.Add(this.archivedOrdersPage);
+            this.archivesTC.Controls.Add(this.archivedStaffPage);
+            this.archivesTC.Location = new System.Drawing.Point(-4, 58);
+            this.archivesTC.Name = "archivesTC";
+            this.archivesTC.SelectedIndex = 0;
+            this.archivesTC.Size = new System.Drawing.Size(743, 448);
+            this.archivesTC.TabIndex = 13;
+            // 
+            // archivedCarsPage
+            // 
+            this.archivedCarsPage.Controls.Add(this.archivedCarsDG);
+            this.archivedCarsPage.Location = new System.Drawing.Point(4, 22);
+            this.archivedCarsPage.Name = "archivedCarsPage";
+            this.archivedCarsPage.Padding = new System.Windows.Forms.Padding(3);
+            this.archivedCarsPage.Size = new System.Drawing.Size(735, 422);
+            this.archivedCarsPage.TabIndex = 0;
+            this.archivedCarsPage.Text = "archivedCarsPage";
+            this.archivedCarsPage.UseVisualStyleBackColor = true;
+            // 
+            // archivedClientsPage
+            // 
+            this.archivedClientsPage.Controls.Add(this.archivedClientsDG);
+            this.archivedClientsPage.Location = new System.Drawing.Point(4, 22);
+            this.archivedClientsPage.Name = "archivedClientsPage";
+            this.archivedClientsPage.Padding = new System.Windows.Forms.Padding(3);
+            this.archivedClientsPage.Size = new System.Drawing.Size(735, 422);
+            this.archivedClientsPage.TabIndex = 1;
+            this.archivedClientsPage.Text = "archivedClientsPage";
+            this.archivedClientsPage.UseVisualStyleBackColor = true;
+            // 
+            // archivedOrdersPage
+            // 
+            this.archivedOrdersPage.Controls.Add(this.archivedOrdersDG);
+            this.archivedOrdersPage.Location = new System.Drawing.Point(4, 22);
+            this.archivedOrdersPage.Name = "archivedOrdersPage";
+            this.archivedOrdersPage.Size = new System.Drawing.Size(735, 422);
+            this.archivedOrdersPage.TabIndex = 2;
+            this.archivedOrdersPage.Text = "archivedOrdersPage";
+            this.archivedOrdersPage.UseVisualStyleBackColor = true;
+            // 
+            // archivedStaffPage
+            // 
+            this.archivedStaffPage.Controls.Add(this.archivedStaffDG);
+            this.archivedStaffPage.Location = new System.Drawing.Point(4, 22);
+            this.archivedStaffPage.Name = "archivedStaffPage";
+            this.archivedStaffPage.Size = new System.Drawing.Size(735, 422);
+            this.archivedStaffPage.TabIndex = 3;
+            this.archivedStaffPage.Text = "archivedStaffPage";
+            this.archivedStaffPage.UseVisualStyleBackColor = true;
+            // 
+            // archivedClientsDG
+            // 
+            this.archivedClientsDG.AllowUserToAddRows = false;
+            this.archivedClientsDG.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Control;
+            this.archivedClientsDG.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle22;
+            this.archivedClientsDG.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.archivedClientsDG.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.archivedClientsDG.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.archivedClientsDG.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.archivedClientsDG.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle23;
+            this.archivedClientsDG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Lucida Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.archivedClientsDG.DefaultCellStyle = dataGridViewCellStyle24;
+            this.archivedClientsDG.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.archivedClientsDG.Location = new System.Drawing.Point(3, 0);
+            this.archivedClientsDG.Name = "archivedClientsDG";
+            this.archivedClientsDG.ReadOnly = true;
+            this.archivedClientsDG.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle25.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle25.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle25.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.archivedClientsDG.RowHeadersDefaultCellStyle = dataGridViewCellStyle25;
+            this.archivedClientsDG.RowHeadersVisible = false;
+            this.archivedClientsDG.RowHeadersWidth = 10;
+            this.archivedClientsDG.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.archivedClientsDG.RowsDefaultCellStyle = dataGridViewCellStyle26;
+            this.archivedClientsDG.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.archivedClientsDG.Size = new System.Drawing.Size(726, 422);
+            this.archivedClientsDG.TabIndex = 13;
+            // 
+            // archivedOrdersDG
+            // 
+            this.archivedOrdersDG.AllowUserToAddRows = false;
+            this.archivedOrdersDG.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.Control;
+            this.archivedOrdersDG.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle27;
+            this.archivedOrdersDG.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.archivedOrdersDG.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.archivedOrdersDG.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.archivedOrdersDG.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle28.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle28.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle28.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.archivedOrdersDG.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle28;
+            this.archivedOrdersDG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle29.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle29.Font = new System.Drawing.Font("Lucida Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle29.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
+            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.archivedOrdersDG.DefaultCellStyle = dataGridViewCellStyle29;
+            this.archivedOrdersDG.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.archivedOrdersDG.Location = new System.Drawing.Point(3, 0);
+            this.archivedOrdersDG.Name = "archivedOrdersDG";
+            this.archivedOrdersDG.ReadOnly = true;
+            this.archivedOrdersDG.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle30.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle30.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle30.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.archivedOrdersDG.RowHeadersDefaultCellStyle = dataGridViewCellStyle30;
+            this.archivedOrdersDG.RowHeadersVisible = false;
+            this.archivedOrdersDG.RowHeadersWidth = 10;
+            this.archivedOrdersDG.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle31.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.archivedOrdersDG.RowsDefaultCellStyle = dataGridViewCellStyle31;
+            this.archivedOrdersDG.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.archivedOrdersDG.Size = new System.Drawing.Size(726, 422);
+            this.archivedOrdersDG.TabIndex = 13;
+            // 
+            // archivedStaffDG
+            // 
+            this.archivedStaffDG.AllowUserToAddRows = false;
+            this.archivedStaffDG.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle32.BackColor = System.Drawing.SystemColors.Control;
+            this.archivedStaffDG.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle32;
+            this.archivedStaffDG.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.archivedStaffDG.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.archivedStaffDG.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.archivedStaffDG.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle33.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle33.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle33.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle33.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle33.SelectionForeColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle33.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.archivedStaffDG.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle33;
+            this.archivedStaffDG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle34.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle34.Font = new System.Drawing.Font("Lucida Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle34.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle34.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
+            dataGridViewCellStyle34.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.archivedStaffDG.DefaultCellStyle = dataGridViewCellStyle34;
+            this.archivedStaffDG.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.archivedStaffDG.Location = new System.Drawing.Point(3, 0);
+            this.archivedStaffDG.Name = "archivedStaffDG";
+            this.archivedStaffDG.ReadOnly = true;
+            this.archivedStaffDG.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle35.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle35.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle35.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle35.SelectionForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.archivedStaffDG.RowHeadersDefaultCellStyle = dataGridViewCellStyle35;
+            this.archivedStaffDG.RowHeadersVisible = false;
+            this.archivedStaffDG.RowHeadersWidth = 10;
+            this.archivedStaffDG.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle36.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.archivedStaffDG.RowsDefaultCellStyle = dataGridViewCellStyle36;
+            this.archivedStaffDG.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.archivedStaffDG.Size = new System.Drawing.Size(726, 422);
+            this.archivedStaffDG.TabIndex = 13;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1517,6 +1940,16 @@ namespace Autodealer
             this.hideStaffTBs.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.staffDG)).EndInit();
             this.welcomePage.ResumeLayout(false);
+            this.archiveTabPage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.archivedCarsDG)).EndInit();
+            this.archivesTC.ResumeLayout(false);
+            this.archivedCarsPage.ResumeLayout(false);
+            this.archivedClientsPage.ResumeLayout(false);
+            this.archivedOrdersPage.ResumeLayout(false);
+            this.archivedStaffPage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.archivedClientsDG)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.archivedOrdersDG)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.archivedStaffDG)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1611,6 +2044,21 @@ namespace Autodealer
         private System.Windows.Forms.ComboBox workerSurnameCB;
         private System.Windows.Forms.ComboBox workerNameCB;
         private FontAwesome.Sharp.IconButton createReport;
+        private FontAwesome.Sharp.IconButton archiveBtn;
+        private System.Windows.Forms.TabPage archiveTabPage;
+        private FontAwesome.Sharp.IconButton staffArchiveBtn;
+        private FontAwesome.Sharp.IconButton clientArchiveBtn;
+        private FontAwesome.Sharp.IconButton ordersArchiveBtn;
+        private FontAwesome.Sharp.IconButton carArchiveBtn;
+        private System.Windows.Forms.TabControl archivesTC;
+        private System.Windows.Forms.TabPage archivedCarsPage;
+        private System.Windows.Forms.DataGridView archivedCarsDG;
+        private System.Windows.Forms.TabPage archivedClientsPage;
+        private System.Windows.Forms.TabPage archivedOrdersPage;
+        private System.Windows.Forms.TabPage archivedStaffPage;
+        private System.Windows.Forms.DataGridView archivedClientsDG;
+        private System.Windows.Forms.DataGridView archivedOrdersDG;
+        private System.Windows.Forms.DataGridView archivedStaffDG;
     }
 }
 
